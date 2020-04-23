@@ -1,6 +1,6 @@
 'use strict';
 const _ = require('lodash');
-const crypto = require('crypto');
+const createHmac = require('create-hmac');
 const querystring = require('querystring');
 
 /**
@@ -16,7 +16,7 @@ module.exports = function signMessage(secret, verb, url, nonce, data) {
   if (!data || _.isEmpty(data)) data = '';
   else if (_.isObject(data)) data = JSON.stringify(data);
 
-  return crypto.createHmac('sha256', secret).update(verb + url + nonce + data).digest('hex');
+  return createHmac('sha256', secret).update(verb + url + nonce + data).digest('hex');
 };
 
 var nonceCounter = 0;
