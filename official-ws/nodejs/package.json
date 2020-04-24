@@ -25,6 +25,6 @@
     "eventemitter2": "5.0.1",
     "lodash": "4.17.10",
     "superagent": "5.1.0",
-    "ws": "7.2.0"
+    "websocket": "1.0.31"
   }
 }

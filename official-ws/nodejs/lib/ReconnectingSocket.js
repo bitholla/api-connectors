@@ -1,5 +1,5 @@
 'use strict';
-const WebSocket = require('ws');
+const WebSocket = require('websocket').client;
 const debug = require('debug')('BitMEX:realtime-api:socket:internal');
 
 const CLOSE_NORMAL = 1000;
